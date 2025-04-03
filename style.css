@@ -129,12 +129,14 @@ body {
 body {
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0.5fr 5fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas: 
     "header"
     "nav"
     "gallery"
     "footer";
+gap: 30px;
+  
 }
 
 nav {
@@ -145,6 +147,32 @@ nav {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 120px;
+  column-gap: 80px;
+  margin: 0 auto;
   justify-items: center;
+  padding: 20px;
+}
+
+.nav__link, .nav__link--active {
+ justify-items: center;
+}
+
+.header {
+  min-height: 100px;
+  padding-bottom: 30px;
+}
+
+.img_card__container {
+  grid-area: gallery;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  justify-items: center;
+  padding-top: 30px;
+}
+
+.footer {
+  grid-area: footer;
+  padding-top: 30px;
+  max-height: fit-content;
+}
+
 }
