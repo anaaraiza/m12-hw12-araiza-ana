@@ -176,3 +176,45 @@ nav {
 }
 
 }
+
+@media screen and (max-width: 500px) {
+
+body {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "gallery"
+    "footer";
+  row-gap: 30px;
+  column-gap: 0;
+}
+
+.header {
+  min-height: 100px;
+  justify-items: center;
+  width: 100%;
+}
+
+.nav {
+  grid-area: nav;
+  max-width: 100%;
+}
+
+.nav__container {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.img_card__container {
+  grid-area: gallery;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  justify-items: center;
+}
+
+
+}
